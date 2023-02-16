@@ -20,12 +20,12 @@ distance = {
     ('Gimpo', 'Incheon'): 40,
     ('Gimpo', 'Jongro'): 10,
     ('Incheon', 'Jongro'): 60
-}
+} # Unit: km
 
 unit_cost = {
     'Passenger': 2000, 
     'Cargo': 1500 
-}
+} # Unit: KRW per km
 
 cost_passenger = {}
 cost_cargo = {}
@@ -34,6 +34,7 @@ for key, value in distance.items():
    cost_passenger[key] = value * unit_cost['Passenger']
    cost_cargo[key] = value * unit_cost['Cargo']
   
+# inflow > 0: origin, inflow < 0: destination  
 inflow = {
     ('Passenger', 'Samseong'): 14, 
     ('Passenger', 'Gimpo'): 3,
@@ -43,7 +44,7 @@ inflow = {
     ('Cargo', 'Gimpo'): 6,
     ('Cargo', 'Incheon'): -5,
     ('Cargo', 'Jongro'): -5
-}
+} 
 
 m = gp.Model('MCFP')
 
